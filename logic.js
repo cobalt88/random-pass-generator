@@ -1,9 +1,8 @@
 // Assignment Code
  var generateBtn = document.querySelector("#generate");
-// console.log(generateBtn)
 
-
-const myArrayUpper = Array.from(Array(26)).map((e,i) => i + 65);
+// starting arrays, uppercase, lowercase, numbers, and special characters to be used for generating pool array based on user input.
+const myArrayUpper = Array.from(Array(26)).map((e,i) => i + 65);  
 const alphabetUpper = myArrayUpper.map((x) => String.fromCharCode(x));
 
 const myArrayLower = Array.from(Array(26)).map((e,i) => i + 97);
@@ -14,10 +13,11 @@ const specCharArray = ["!", "@", "#", "$", "%", "^", "&","*", "(", ")"];
 
 
 
-
+// Gernation function. variables are defined by user prompts (confirm messages)
 function generatePassword() {
 var results = "";
 var numberOfCharacters = window.prompt("How long would you like your password to be?");
+// parseInt converts user input string into an interger so that it can be used as a variable by the math function.
 var charQty = parseInt(numberOfCharacters);
 
   if(charQty > 7 && charQty < 129) { 
@@ -29,14 +29,15 @@ var charQty = parseInt(numberOfCharacters);
     var numeric = window.confirm("Include numbers?");
 
     var specChar = window.confirm("Special Characters?");
+    // if the use iputs a non number or number outside the range of 8-128 it kicks them back to the start of the function
   } else {
     window.alert("That is an invalid entry. Select a length between 8 and 128");
     return generatePassword();
   }
-
+// empty array that gets filled with the values stored in any array the user selects to add to their password paramaters.
 var pool = [];
-  
- if (upperCase == true) pool.push(...alphabetUpper);
+  // if statements to push truthy arrays into the empty pool array
+  if (upperCase == true) pool.push(...alphabetUpper);
 
   if (lowerCase == true) pool.push(...alphabetLower);
 
@@ -44,10 +45,9 @@ var pool = [];
 
   if (specChar == true) pool.push(...specCharArray);
 
-
+// line 48 checks to see if at least one variable is truthy. if none are truthy then it kicks the user back to the start of the generate function.
 if ( lowerCase || upperCase || numeric || specChar) {
-  // var store = Math.floor(Math.random() *pool.length);
-  // var passArray = pool[store];
+  // for loop to generate a random value based on the length of the merged pool array and set to repeat untill i = user imput password length variable charQty
   for (var i = 0; i < charQty; i++) {
     results += pool[Math.floor(Math.random()*pool.length)];
     } 
@@ -59,21 +59,7 @@ if ( lowerCase || upperCase || numeric || specChar) {
   return results;
 }
 
-
-// var upperLetters = window.prompt("Would you like to include any upper care letters?")
-//   if (upperLetters = true) {
-//   }
-// }
-
-
-
-// function generatePassword() {
-//   var password = passwordObjectGen();
-//   console.log();
-//   console.log();
-//   console.log();
-// }
-
+// code provided by assignment.
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -83,3 +69,4 @@ function writePassword() {
 
 generateBtn.addEventListener("click", writePassword);
 
+// code written by Vincent Teune, 3-6-22
