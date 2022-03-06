@@ -1,6 +1,6 @@
 # Random Password Generator
 
-
+## Live Page Link: https://cobalt88.github.io/random-pass-generator/
 
 this java script web application serves the purpose of generating a random password based on a selection of user inputs and can generate a password anywhere from 8-128 characters. 
 
