@@ -46,8 +46,6 @@ var pool = [];
 
 
 if ( lowerCase || upperCase || numeric || specChar) {
-  // var store = Math.floor(Math.random() *pool.length);
-  // var passArray = pool[store];
   for (var i = 0; i < charQty; i++) {
     results += pool[Math.floor(Math.random()*pool.length)];
     } 
@@ -60,19 +58,6 @@ if ( lowerCase || upperCase || numeric || specChar) {
 }
 
 
-// var upperLetters = window.prompt("Would you like to include any upper care letters?")
-//   if (upperLetters = true) {
-//   }
-// }
-
-
-
-// function generatePassword() {
-//   var password = passwordObjectGen();
-//   console.log();
-//   console.log();
-//   console.log();
-// }
 
 function writePassword() {
   var password = generatePassword();
