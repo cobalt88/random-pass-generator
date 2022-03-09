@@ -29,7 +29,7 @@ var charQty = parseInt(numberOfCharacters);
 
   if(charQty > 7 && charQty < 129) { 
   
-    var lowerCase = window.confirm("How about lower case?");
+    var lowerCase = window.confirm("Would you like to include lower case letters??");
 
     var upperCase = window.confirm("Would you like to include upper case letters?");
  
