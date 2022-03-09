@@ -8,8 +8,15 @@ const alphabetUpper = myArrayUpper.map((x) => String.fromCharCode(x));
 const myArrayLower = Array.from(Array(26)).map((e,i) => i + 97);
 const alphabetLower = myArrayLower.map((x) => String.fromCharCode(x));
 
-const numericArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-const specCharArray = ["!", "@", "#", "$", "%", "^", "&","*", "(", ")"];
+const myArrayNumeric = Array.from(Array(10)).map((e,i) => i + 48);
+const numericArray = myArrayNumeric.map((x) => String.fromCharCode(x));
+
+const myArraySpecial = Array.from(Array(15)).map((e,i) => i + 33);
+const specCharArray = myArraySpecial.map((x) => String.fromCharCode(x));
+
+// this bit below was the original array, i figured out how to manipulate the upper array generation teknique to replace these. 
+// const numericArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+// const specCharArray = ["!", "@", "#", "$", "%", "^", "&","*", "(", ")"];
 
 
 
