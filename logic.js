@@ -14,12 +14,6 @@ const numericArray = myArrayNumeric.map((x) => String.fromCharCode(x));
 const myArraySpecial = Array.from(Array(15)).map((e,i) => i + 33);
 const specCharArray = myArraySpecial.map((x) => String.fromCharCode(x));
 
-// this bit below was the original array, i figured out how to manipulate the upper array generation teknique to replace these. 
-// const numericArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-// const specCharArray = ["!", "@", "#", "$", "%", "^", "&","*", "(", ")"];
-
-
-
 // Gernation function. variables are defined by user prompts (confirm messages)
 function generatePassword() {
 var results = "";
@@ -51,8 +45,7 @@ var pool = [];
   if (numeric == true) pool.push(...numericArray);
 
   if (specChar == true) pool.push(...specCharArray);
-
-// line 48 checks to see if at least one variable is truthy. if none are truthy then it kicks the user back to the start of the generate function.
+ 
 if ( lowerCase || upperCase || numeric || specChar) {
   // for loop to generate a random value based on the length of the merged pool array and set to repeat untill i = user imput password length variable charQty
   for (var i = 0; i < charQty; i++) {
