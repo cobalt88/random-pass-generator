@@ -69,4 +69,4 @@ function writePassword() {
 
 generateBtn.addEventListener("click", writePassword);
 
-// code written by Vincent Teune, 3-6-22
+// Author: Vincent Teune, 3-6-22
