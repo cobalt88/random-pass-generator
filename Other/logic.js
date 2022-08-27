@@ -19,14 +19,14 @@ var numberOfCharacters = window.prompt("How long would you like your password to
 var charQty = parseInt(numberOfCharacters);
 
   if(charQty > 7 && charQty < 129) { 
-  } 
-  }else {
+  } else {
     window.alert("That is an invalid entry. Select a length between 8 and 128");
     return generatePassword();
+  }
 
 var upperCase = window.confirm("Would you like to include upper case letters?");
 
-// var lowerCase = window.confirm("How about lower case?");
+var lowerCase = window.confirm("How about lower case?");
 
 // var numeric  = window.confirm("Include numbers?");
 
@@ -35,8 +35,12 @@ var upperCase = window.confirm("Would you like to include upper case letters?");
 if (upperCase == true) {
   for (var i = 0; i < charQty; i++) {
     results += alphabetUpper[Math.floor(Math.random()*26)];
-    }
-  } 
+    }}
+    if (lowerCase == true) {
+  for (var i = 0; i < charQty; i++) {
+  results += alphabetLower[Math.floor(Math.random()*26)];
+        }}
+
   return results;
 }
 
